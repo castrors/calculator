@@ -101,5 +101,31 @@ void main() {
         ..type(Input.result);
       expect(calculator.display, equals(4));
     });
+
+    test('on type 1 and then AC, calculator display should be 0', () {
+      calculator
+        ..type(Input.one)
+        ..type(Input.allClear);
+      expect(calculator.display, equals(0));
+    });
+
+    test('on type 1.5 and then AC, calculator display should be 1.5', () {
+      calculator
+        ..type(Input.one)
+        ..type(Input.decimalPoint)
+        ..type(Input.five);
+      expect(calculator.display, equals(1.5));
+    });
+
+    test('on type 1.5*3= and then AC, calculator display should be 4.5', () {
+      calculator
+        ..type(Input.one)
+        ..type(Input.decimalPoint)
+        ..type(Input.five)
+        ..type(Input.multiplication)
+        ..type(Input.three)
+        ..type(Input.result);
+      expect(calculator.display, equals(4.5));
+    });
   });
 }

@@ -13,7 +13,9 @@ enum Input {
   subtraction,
   multiplication,
   division,
-  result
+  result,
+  allClear,
+  decimalPoint
 }
 
 class Calculator {
@@ -72,6 +74,12 @@ class Calculator {
           final result = evaluate(_currentOperation!, number1, number2);
           _result = result.toString();
         }
+        break;
+      case Input.allClear:
+        _result = '0';
+        break;
+      case Input.decimalPoint:
+        _result += '.';
         break;
       default:
     }
