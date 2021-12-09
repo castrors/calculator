@@ -1,0 +1,7 @@
+{
+    "@@locale": "pt",
+    "calculatorAppBarTitle": "Calculadora",
+    "@calculatorAppBarTitle": {
+        "description": "Texto mostrado na AppBar da página da calculadora"
+    }
+}

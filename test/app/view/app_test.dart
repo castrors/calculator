@@ -6,14 +6,14 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:calculator/app/app.dart';
-import 'package:calculator/counter/counter.dart';
+import 'package:calculator/calculator/view/calculator_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders CalculatorPage()', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+      expect(find.byType(CalculatorPage), findsOneWidget);
     });
   });
 }
