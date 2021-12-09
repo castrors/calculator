@@ -140,7 +140,6 @@ class CalculatorView extends StatelessWidget {
                   child: const Text(
                     '0',
                     key: Key('key_zero'),
-                    semanticsLabel: 'zero',
                   ),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.zero),

@@ -53,10 +53,9 @@ void main() {
           ),
         );
 
-        await tester.tap(find.bySemanticsLabel('zero'));
+        await tester.tap(find.byKey(const Key('key_zero')));
         verify(() => calculatorCubit.type(Input.zero)).called(1);
       },
-      skip: true,
     );
 
     testWidgets('perform key 1 on tapping button 1', (tester) async {
@@ -225,7 +224,6 @@ void main() {
         await tester.tap(find.byKey(const Key('key_subtraction')));
         verify(() => calculatorCubit.type(Input.subtraction)).called(1);
       },
-      skip: true,
     );
 
     testWidgets('perform key * on tapping button *', (tester) async {
@@ -274,7 +272,6 @@ void main() {
         await tester.tap(find.byKey(const Key('key_decimalPoint')));
         verify(() => calculatorCubit.type(Input.decimalPoint)).called(1);
       },
-      skip: true,
     );
 
     testWidgets(
@@ -293,7 +290,6 @@ void main() {
         await tester.tap(find.byKey(const Key('key_allClear')));
         verify(() => calculatorCubit.type(Input.allClear)).called(1);
       },
-      skip: true,
     );
 
     testWidgets(
@@ -312,7 +308,6 @@ void main() {
         await tester.tap(find.byKey(const Key('key_result')));
         verify(() => calculatorCubit.type(Input.result)).called(1);
       },
-      skip: true,
     );
   });
 }
