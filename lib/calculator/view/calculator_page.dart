@@ -29,10 +29,10 @@ class CalculatorView extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: Text(
               '$displayValue',
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
             ),
           ),
           Expanded(
@@ -40,42 +40,42 @@ class CalculatorView extends StatelessWidget {
               crossAxisCount: 4,
               children: [
                 TextButton(
-                  child: Text('7'),
+                  child: const Text('7'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.seven),
                 ),
                 TextButton(
-                  child: Text('8'),
+                  child: const Text('8'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.eight),
                 ),
                 TextButton(
-                  child: Text('9'),
+                  child: const Text('9'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.nine),
                 ),
                 TextButton(
-                  child: Text('/'),
+                  child: const Text('/'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.division),
                 ),
                 TextButton(
-                  child: Text('4'),
+                  child: const Text('4'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.four),
                 ),
                 TextButton(
-                  child: Text('5'),
+                  child: const Text('5'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.five),
                 ),
                 TextButton(
-                  child: Text('6'),
+                  child: const Text('6'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.six),
                 ),
                 TextButton(
-                  child: Text('*'),
+                  child: const Text('*'),
                   onPressed: () => context
                       .read<CalculatorCubit>()
                       .type(Input.multiplication),
@@ -89,42 +89,42 @@ class CalculatorView extends StatelessWidget {
                       context.read<CalculatorCubit>().type(Input.one),
                 ),
                 TextButton(
-                  child: Text('2'),
+                  child: const Text('2'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.two),
                 ),
                 TextButton(
-                  child: Text('3'),
+                  child: const Text('3'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.three),
                 ),
                 TextButton(
-                  child: Text('+'),
+                  child: const Text('+'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.addition),
                 ),
                 TextButton(
-                  child: Text('0'),
+                  child: const Text('0'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.seven),
                 ),
                 TextButton(
-                  child: Text('.'),
+                  child: const Text('.'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.decimalPoint),
                 ),
                 TextButton(
-                  child: Text('='),
+                  child: const Text('='),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.result),
                 ),
                 TextButton(
-                  child: Text('-'),
+                  child: const Text('-'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.subtraction),
                 ),
                 TextButton(
-                  child: Text('AC'),
+                  child: const Text('AC'),
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.allClear),
                 ),

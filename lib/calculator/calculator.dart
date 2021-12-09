@@ -81,6 +81,7 @@ class Calculator {
       case Input.decimalPoint:
         _result += '.';
         break;
+      // ignore: no_default_cases
       default:
     }
   }
@@ -95,6 +96,7 @@ class Calculator {
         return number1 * number2;
       case Input.division:
         return number1 / number2;
+      // ignore: no_default_cases
       default:
         return number1 + number2;
     }
