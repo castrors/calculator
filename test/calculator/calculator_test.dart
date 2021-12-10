@@ -127,5 +127,9 @@ void main() {
         ..type(Input.result);
       expect(calculator.display, equals(4.5));
     });
+
+    test('on evaluate one invalid operation', () {
+      expect(() => calculator.evaluate(Input.eight, 2, 4), throwsException);
+    });
   });
 }
