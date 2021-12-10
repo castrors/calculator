@@ -24,46 +24,36 @@ class CalculatorView extends StatelessWidget {
     final l10n = context.l10n;
 
     final displayValue = context.select((CalculatorCubit cubit) => cubit.state);
+
     return Scaffold(
       appBar: AppBar(title: Text(l10n.calculatorAppBarTitle)),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: Text(
-              '$displayValue',
-              style: const TextStyle(fontSize: 24),
-            ),
+          Row(
+            children: [
+              Center(
+                child: Text(
+                  '$displayValue',
+                  style: const TextStyle(fontSize: 24),
+                ),
+              ),
+            ],
           ),
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 4,
-              children: [
-                TextButton(
+          Row(
+            children: [
+              Expanded(
+                flex: 3,
+                child: TextButton(
                   child: const Text(
-                    '7',
-                    key: Key('key_seven'),
+                    'AC',
+                    key: Key('key_allClear'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.seven),
+                      context.read<CalculatorCubit>().type(Input.allClear),
                 ),
-                TextButton(
-                  child: const Text(
-                    '8',
-                    key: Key('key_eight'),
-                  ),
-                  onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.eight),
-                ),
-                TextButton(
-                  child: const Text(
-                    '9',
-                    key: Key('key_nine'),
-                  ),
-                  onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.nine),
-                ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
                     '/',
                     key: Key('key_division'),
@@ -71,31 +61,43 @@ class CalculatorView extends StatelessWidget {
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.division),
                 ),
-                TextButton(
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    '4',
-                    key: Key('key_four'),
+                    '7',
+                    key: Key('key_seven'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.four),
+                      context.read<CalculatorCubit>().type(Input.seven),
                 ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    '5',
-                    key: Key('key_five'),
+                    '8',
+                    key: Key('key_eight'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.five),
+                      context.read<CalculatorCubit>().type(Input.eight),
                 ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    '6',
-                    key: Key('key_six'),
+                    '9',
+                    key: Key('key_nine'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.six),
+                      context.read<CalculatorCubit>().type(Input.nine),
                 ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
                     '*',
                     key: Key('key_multiplication'),
@@ -104,63 +106,43 @@ class CalculatorView extends StatelessWidget {
                       .read<CalculatorCubit>()
                       .type(Input.multiplication),
                 ),
-                TextButton(
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    '1',
-                    key: Key('key_one'),
+                    '4',
+                    key: Key('key_four'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.one),
+                      context.read<CalculatorCubit>().type(Input.four),
                 ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    '2',
-                    key: Key('key_two'),
+                    '5',
+                    key: Key('key_five'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.two),
+                      context.read<CalculatorCubit>().type(Input.five),
                 ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    '3',
-                    key: Key('key_three'),
+                    '6',
+                    key: Key('key_six'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.three),
+                      context.read<CalculatorCubit>().type(Input.six),
                 ),
-                TextButton(
-                  child: const Text(
-                    '+',
-                    key: Key('key_addition'),
-                  ),
-                  onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.addition),
-                ),
-                TextButton(
-                  child: const Text(
-                    '0',
-                    key: Key('key_zero'),
-                  ),
-                  onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.zero),
-                ),
-                TextButton(
-                  child: const Text(
-                    '.',
-                    key: Key('key_decimalPoint'),
-                  ),
-                  onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.decimalPoint),
-                ),
-                TextButton(
-                  child: const Text(
-                    '=',
-                    key: Key('key_result'),
-                  ),
-                  onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.result),
-                ),
-                TextButton(
+              ),
+              Expanded(
+                child: TextButton(
                   child: const Text(
                     '-',
                     key: Key('key_subtraction'),
@@ -168,17 +150,88 @@ class CalculatorView extends StatelessWidget {
                   onPressed: () =>
                       context.read<CalculatorCubit>().type(Input.subtraction),
                 ),
-                TextButton(
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
                   child: const Text(
-                    'AC',
-                    key: Key('key_allClear'),
+                    '1',
+                    key: Key('key_one'),
                   ),
                   onPressed: () =>
-                      context.read<CalculatorCubit>().type(Input.allClear),
+                      context.read<CalculatorCubit>().type(Input.one),
                 ),
-              ],
-            ),
+              ),
+              Expanded(
+                child: TextButton(
+                  child: const Text(
+                    '2',
+                    key: Key('key_two'),
+                  ),
+                  onPressed: () =>
+                      context.read<CalculatorCubit>().type(Input.two),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  child: const Text(
+                    '3',
+                    key: Key('key_three'),
+                  ),
+                  onPressed: () =>
+                      context.read<CalculatorCubit>().type(Input.three),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  child: const Text(
+                    '+',
+                    key: Key('key_addition'),
+                  ),
+                  onPressed: () =>
+                      context.read<CalculatorCubit>().type(Input.addition),
+                ),
+              ),
+            ],
           ),
+          Row(
+            children: [
+              Expanded(
+                flex: 2,
+                child: TextButton(
+                  child: const Text(
+                    '0',
+                    key: Key('key_zero'),
+                  ),
+                  onPressed: () =>
+                      context.read<CalculatorCubit>().type(Input.zero),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  child: const Text(
+                    '.',
+                    key: Key('key_decimalPoint'),
+                  ),
+                  onPressed: () =>
+                      context.read<CalculatorCubit>().type(Input.decimalPoint),
+                ),
+              ),
+              Expanded(
+                child: TextButton(
+                  child: const Text(
+                    '=',
+                    key: Key('key_result'),
+                  ),
+                  onPressed: () =>
+                      context.read<CalculatorCubit>().type(Input.result),
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
