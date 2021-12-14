@@ -44,7 +44,8 @@ void main() {
       'perform key 0 on tapping button 0',
       (tester) async {
         when(() => calculatorCubit.state).thenReturn(0);
-        when(() => calculatorCubit.type(Input.zero)).thenReturn(null);
+        when(() => calculatorCubit.type(Input.zero))
+            .thenAnswer((_) async => true);
 
         await tester.pumpApp(
           BlocProvider.value(
@@ -60,7 +61,7 @@ void main() {
 
     testWidgets('perform key 1 on tapping button 1', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.one)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.one)).thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -75,7 +76,7 @@ void main() {
 
     testWidgets('perform key 2 on tapping button 2', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.two)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.two)).thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -90,7 +91,8 @@ void main() {
 
     testWidgets('perform key 3 on tapping button 3', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.three)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.three))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -105,7 +107,8 @@ void main() {
 
     testWidgets('perform key 4 on tapping button 4', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.four)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.four))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -120,7 +123,8 @@ void main() {
 
     testWidgets('perform key 5 on tapping button 5', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.five)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.five))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -135,7 +139,7 @@ void main() {
 
     testWidgets('perform key 6 on tapping button 6', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.six)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.six)).thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -150,7 +154,8 @@ void main() {
 
     testWidgets('perform key 7 on tapping button 7', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.seven)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.seven))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -165,7 +170,8 @@ void main() {
 
     testWidgets('perform key 8 on tapping button 8', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.eight)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.eight))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -180,7 +186,8 @@ void main() {
 
     testWidgets('perform key 9 on tapping button 9', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.nine)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.nine))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -195,7 +202,8 @@ void main() {
 
     testWidgets('perform key + on tapping button +', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.addition)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.addition))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -212,7 +220,8 @@ void main() {
       'perform key - on tapping button -',
       (tester) async {
         when(() => calculatorCubit.state).thenReturn(0);
-        when(() => calculatorCubit.type(Input.subtraction)).thenReturn(null);
+        when(() => calculatorCubit.type(Input.subtraction))
+            .thenAnswer((_) async => true);
 
         await tester.pumpApp(
           BlocProvider.value(
@@ -228,7 +237,8 @@ void main() {
 
     testWidgets('perform key * on tapping button *', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.multiplication)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.multiplication))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -243,7 +253,8 @@ void main() {
 
     testWidgets('perform key / on tapping button /', (tester) async {
       when(() => calculatorCubit.state).thenReturn(0);
-      when(() => calculatorCubit.type(Input.division)).thenReturn(null);
+      when(() => calculatorCubit.type(Input.division))
+          .thenAnswer((_) async => true);
 
       await tester.pumpApp(
         BlocProvider.value(
@@ -260,7 +271,8 @@ void main() {
       'perform key . on tapping button .',
       (tester) async {
         when(() => calculatorCubit.state).thenReturn(0);
-        when(() => calculatorCubit.type(Input.decimalPoint)).thenReturn(null);
+        when(() => calculatorCubit.type(Input.decimalPoint))
+            .thenAnswer((_) async => true);
 
         await tester.pumpApp(
           BlocProvider.value(
@@ -278,7 +290,8 @@ void main() {
       'perform key AC on tapping button AC',
       (tester) async {
         when(() => calculatorCubit.state).thenReturn(0);
-        when(() => calculatorCubit.type(Input.allClear)).thenReturn(null);
+        when(() => calculatorCubit.type(Input.allClear))
+            .thenAnswer((_) async => true);
 
         await tester.pumpApp(
           BlocProvider.value(
@@ -296,7 +309,8 @@ void main() {
       'perform key = on tapping button =',
       (tester) async {
         when(() => calculatorCubit.state).thenReturn(0);
-        when(() => calculatorCubit.type(Input.result)).thenReturn(null);
+        when(() => calculatorCubit.type(Input.result))
+            .thenAnswer((_) async => true);
 
         await tester.pumpApp(
           BlocProvider.value(
