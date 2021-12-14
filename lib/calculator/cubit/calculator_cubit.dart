@@ -6,7 +6,7 @@ class CalculatorCubit extends Cubit<double> {
 
   final Calculator calculator;
 
-  void type(Input input) {
+  Future<void> type(Input input) async {
     calculator.type(input);
     emit(calculator.display);
   }

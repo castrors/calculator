@@ -1,6 +1,8 @@
 import 'package:calculator/calculator/calculator.dart';
 import 'package:calculator/calculator/cubit/calculator_cubit.dart';
 import 'package:calculator/calculator/model/model.dart';
+import 'package:calculator/calculator/widget/calculator_display_widget.dart';
+import 'package:calculator/calculator/widget/widget.dart';
 import 'package:calculator/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,45 +30,40 @@ class CalculatorView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.calculatorAppBarTitle)),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              child: Row(
-                children: [
-                  Center(
-                    child: Text(
-                      '$displayValue',
-                      style: const TextStyle(fontSize: 24),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ...getButtons().map(
-              (row) => Expanded(
+      body: Container(
+        color: Colors.black54,
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
                 child: Row(
-                  children: row
-                      .map(
-                        (button) => Expanded(
-                          flex: button.weight,
-                          child: TextButton(
-                            child: Text(
-                              button.title,
-                              key: Key(button.key),
-                            ),
-                            onPressed: () => context
-                                .read<CalculatorCubit>()
-                                .type(button.input),
-                          ),
-                        ),
-                      )
-                      .toList(),
+                  children: [
+                    CalculatorDisplayWidget(
+                      displayValue: displayValue.toString(),
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              ...getButtons().map(
+                (row) => Expanded(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: row
+                        .map(
+                          (button) => Expanded(
+                            flex: button.weight,
+                            child: CalculatorButtonWidget(
+                              button: button,
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
